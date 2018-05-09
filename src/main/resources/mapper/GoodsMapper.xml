@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.share.mapper.GoodsMapper">
+    <resultMap type="com.share.pojo.Goods" id="GoodsInfoResult">
+        <id property="ID" column="oid"/>
+        <result property="GoodsName" column="object"/>
+        <result property="password" column="pwd"/>
+        <result property="price" column="price"/>
+    </resultMap>
+    <!--&lt;!&ndash;通过产品id 查询密码&ndash;&gt;-->
+    <!--<select id="getGoodsId" parameterType="String" resultMap="GoodsInfoResult">-->
+    <!--select * from goods where ID=#{ID}-->
+    <!--</select>-->
+    <!--查询商品-->
+    <select id="searchGoodsName" parameterType="com.share.pojo.Goods" resultMap="GoodsInfoResult">
+        select * from Objects where object like CONCAT('%',#{GoodsName},'%')
+    </select>
+    <!--查询详细的信息-->
+    <select id="SearchContext" parameterType="com.share.pojo.Goods" resultMap="GoodsInfoResult">
+        select * from Objects where object=#{GoodsName}
+    </select>
+</mapper>
