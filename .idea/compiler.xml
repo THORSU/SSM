@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="MyTestMVC1.0" />
+        <module name="SSM" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MyTestMVC1.0" target="1.7" />
+      <module name="SSM" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>
